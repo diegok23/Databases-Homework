@@ -47,3 +47,14 @@ SELECT * FROM bookings WHERE checkin_date > '2019/10/01' AND nights >= 2;
 SELECT * FROM hotels WHERE postcode = 'CM194JS' OR postcode = 'TR209AX';
 
 
+
+Class 2
+
+--Exercise in class 1
+
+ALTER TABLE customers ADD COLUMN date_of_birth DATE;
+ALTER TABLE customers RENAME COLUMN date_of_birth TO birthdate;
+ALTER TABLE customers DROP COLUMN birthdate;
+
+DROP TABLE customers;
+
