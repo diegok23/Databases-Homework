@@ -58,3 +58,11 @@ ALTER TABLE customers DROP COLUMN birthdate;
 
 DROP TABLE customers;
 
+--Exercise in class 2
+
+CREATE TABLE test ();
+DROP TABLE test;
+UPDATE customers SET name='Bob Marley', country='Jamaica' WHERE id=3;
+SELECT * FROM customers;
+
+
