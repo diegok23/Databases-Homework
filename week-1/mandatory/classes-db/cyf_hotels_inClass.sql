@@ -80,3 +80,12 @@ SELECT * FROM bookings WHERE customer_id=1;
 SELECT COUNT(*) FROM bookings WHERE customer_id=1 AND hotel_id=1;
 SELECT COUNT(*) FROM bookings WHERE customer_id=1 AND hotel_id!=1;
 
+--Exercise in class 4
+--4.1
+DELETE FROM bookings WHERE customer_id=8 AND checkin_date='2020-01-03';
+--4.2
+DELETE FROM bookings WHERE customer_id=6;
+--4.3
+DELETE FROM customers WHERE id=6;
+
+
