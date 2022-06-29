@@ -65,4 +65,18 @@ DROP TABLE test;
 UPDATE customers SET name='Bob Marley', country='Jamaica' WHERE id=3;
 SELECT * FROM customers;
 
+--Exercise in class 3
+
+--3.1
+UPDATE hotels SET postcode='L10XYZ' WHERE name='Elder Lake Hotel';
+--3.2
+UPDATE hotels SET rooms=25 WHERE name='Cozy Hotel';
+--3.3
+UPDATE customers SET address='2 Blue Street', city='Glasgow', postcode='G11ABC' WHERE name='Nadia Sethuraman';
+--3.4
+UPDATE bookings SET nights=5 WHERE customer_id=1 AND hotel_id=1
+
+SELECT * FROM bookings WHERE customer_id=1;
+SELECT COUNT(*) FROM bookings WHERE customer_id=1 AND hotel_id=1;
+SELECT COUNT(*) FROM bookings WHERE customer_id=1 AND hotel_id!=1;
 
