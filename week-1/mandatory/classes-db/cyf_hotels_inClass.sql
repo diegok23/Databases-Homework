@@ -108,6 +108,19 @@ INNER JOIN customers AS c ON c.id=b.customer_id
 INNER JOIN hotels AS h ON h.id=b.hotel_id 
 WHERE b.nights>=5;
 
+--Exercise 6 (at home)
+--6.1
+SELECT name FROM customers WHERE name LIKE 'S%';
+--6.2
+SELECT name FROM hotels WHERE name LIKE '%Hotel%';
+--6.3
+SELECT b.checkin_date, c.name, h.name
+FROM bookings AS b
+INNER JOIN customers AS c ON b.customer_id=c.id
+INNER JOIN hotels AS h ON b.hotel_id=h.id
+ORDER BY b.nights DESC
+LIMIT 5;
+
 
 /*  Teacher's notes:
 
