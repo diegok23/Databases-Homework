@@ -88,4 +88,34 @@ DELETE FROM bookings WHERE customer_id=6;
 --4.3
 DELETE FROM customers WHERE id=6;
 
+--Exercise in class 5
+--5.2
+SELECT * FROM customers 
+INNER JOIN bookings ON customers.id=bookings.customer_id 
+WHERE bookings.checkin_date>'2020-01-01';
 
+--5.3
+SELECT c.name, b.checkin_date AS checkInDate, b.nights 
+FROM customers AS c
+INNER JOIN bookings AS b ON c.id=b.customer_id 
+INNER JOIN hotels AS h ON h.id=b.hotel_id 
+WHERE h.name='Jade Peaks Hotel';
+
+--5.4
+SELECT c.name, b.checkin_date, h.name 
+FROM bookings AS b
+INNER JOIN customers AS c ON c.id=b.customer_id
+INNER JOIN hotels AS h ON h.id=b.hotel_id 
+WHERE b.nights>=5;
+
+
+/*  Teacher's notes:
+
+1.  lo que nos piden: customer names, booking start dates and number of nights => customers, bookings
+    condiciones: for all customers who booked the hotel name Jade Peaks Hotel => customers, bookings, hotels
+2.  como se relacionan: bookings.customer_id=customers.id, hotels.id=bookings.hotel_id
+3.  Condición: => hotel name: Jade Peaks Hotel 
+4.  ALIAS!
+5.  lo que nos piden => escribir con alias las columnas a devolver.
+6.  [opcional!] alias en la respuesta
+ */
