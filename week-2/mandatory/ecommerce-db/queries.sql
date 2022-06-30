@@ -15,4 +15,9 @@ WHERE unit_price > 100;
 SELECT * FROM products
 WHERE product_name LIKE '%socks%';
 
+--5. Retrieve the 5 most expensive products
+SELECT * FROM products
+ORDER BY unit_price DESC
+LIMIT 5;
+
 
