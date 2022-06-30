@@ -64,3 +64,11 @@ INNER JOIN order_items AS i ON o.id=i.order_id
 INNER JOIN products AS p ON p.id=i.product_id
 INNER JOIN suppliers AS s ON s.id=p.supplier_id
 WHERE s.country='China';
+
+-----------------------------
+
+--(STRETCH GOAL Node API) Add a new GET endpoint /products to load all the product names along with their supplier names.
+
+SELECT product_name, supplier_name
+FROM products AS p
+INNER JOIN suppliers AS s ON s.id=supplier_id;
