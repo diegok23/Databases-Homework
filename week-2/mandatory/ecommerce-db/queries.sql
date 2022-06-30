@@ -41,4 +41,11 @@ FROM orders AS o
 INNER JOIN customers AS c ON c.id=o.customer_id
 WHERE c.name='Hope Crosby';
 
+--10. Retrieve all the products in the order `ORD006`. The result should only contain the columns `product_name`, `unit_price` and `quantity`.
+SELECT product_name, unit_price, quantity
+FROM products AS p
+INNER JOIN order_items AS i ON p.id=i.product_id
+INNER JOIN orders AS o ON o.id=i.order_id
+WHERE o.order_reference='ORD006';
+
 
