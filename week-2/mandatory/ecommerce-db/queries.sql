@@ -56,4 +56,11 @@ INNER JOIN order_items AS i ON o.id=i.order_id
 INNER JOIN products AS p ON p.id=i.product_id
 INNER JOIN suppliers AS s ON s.id=p.supplier_id;
 
-
+--12. Retrieve the names of all customers who bought a product from a supplier from China.
+SELECT name
+FROM customers AS c
+INNER JOIN orders AS o ON c.id=o.customer_id
+INNER JOIN order_items AS i ON o.id=i.order_id
+INNER JOIN products AS p ON p.id=i.product_id
+INNER JOIN suppliers AS s ON s.id=p.supplier_id
+WHERE s.country='China';
