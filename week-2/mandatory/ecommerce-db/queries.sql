@@ -48,4 +48,12 @@ INNER JOIN order_items AS i ON p.id=i.product_id
 INNER JOIN orders AS o ON o.id=i.order_id
 WHERE o.order_reference='ORD006';
 
+--11. Retrieve all the products with their supplier for all orders of all customers. The result should only contain the columns `name` (from customer), `order_reference` `order_date`, `product_name`, `supplier_name` and `quantity`.
+SELECT name, order_reference, order_date, product_name, supplier_name, quantity
+FROM customers AS c
+INNER JOIN orders AS o ON c.id=o.customer_id
+INNER JOIN order_items AS i ON o.id=i.order_id
+INNER JOIN products AS p ON p.id=i.product_id
+INNER JOIN suppliers AS s ON s.id=p.supplier_id;
+
 
