@@ -7,3 +7,8 @@ WHERE country='United States';
 SELECT * FROM customers
 ORDER BY name;
 
+--3. Retrieve all the products which cost more than 100
+SELECT * FROM products
+WHERE unit_price > 100;
+
+
