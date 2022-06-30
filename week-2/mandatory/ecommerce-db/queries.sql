@@ -11,4 +11,8 @@ ORDER BY name;
 SELECT * FROM products
 WHERE unit_price > 100;
 
+--4. Retrieve all the products whose name contains the word `socks`
+SELECT * FROM products
+WHERE product_name LIKE '%socks%';
+
 
