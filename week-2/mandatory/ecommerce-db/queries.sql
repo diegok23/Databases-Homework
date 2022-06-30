@@ -20,4 +20,9 @@ SELECT * FROM products
 ORDER BY unit_price DESC
 LIMIT 5;
 
+--6. Retrieve all the products with their corresponding suppliers. The result should only contain the columns `product_name`, `unit_price` and `supplier_name`
+SELECT product_name, unit_price, supplier_name
+FROM products AS p
+INNER JOIN suppliers AS s ON s.id=p.supplier_id;
+
 
