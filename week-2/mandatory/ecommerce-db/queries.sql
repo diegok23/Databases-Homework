@@ -31,4 +31,8 @@ FROM products AS p
 INNER JOIN suppliers AS s ON s.id=p.supplier_id
 WHERE s.country='United Kingdom';
 
+--8. Retrieve all orders from customer ID `1`
+SELECT * FROM orders
+WHERE customer_id=1;
+
 
