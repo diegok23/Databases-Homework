@@ -25,4 +25,10 @@ SELECT product_name, unit_price, supplier_name
 FROM products AS p
 INNER JOIN suppliers AS s ON s.id=p.supplier_id;
 
+--7. Retrieve all the products sold by suppliers based in the United Kingdom. The result should only contain the columns `product_name` and `supplier_name`.
+SELECT product_name, supplier_name
+FROM products AS p
+INNER JOIN suppliers AS s ON s.id=p.supplier_id
+WHERE s.country='United Kingdom';
+
 
