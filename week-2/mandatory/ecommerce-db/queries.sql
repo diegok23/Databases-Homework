@@ -35,4 +35,10 @@ WHERE s.country='United Kingdom';
 SELECT * FROM orders
 WHERE customer_id=1;
 
+--9. Retrieve all orders from customer named `Hope Crosby`
+SELECT *
+FROM orders AS o
+INNER JOIN customers AS c ON c.id=o.customer_id
+WHERE c.name='Hope Crosby';
+
 
