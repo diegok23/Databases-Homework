@@ -14,7 +14,11 @@ const getSuppliers = (req, res) => {
 };
 
 const getProducts = (req, res) => {
-  database.pool.query('SELECT product_name, supplier_name FROM products AS p INNER JOIN suppliers AS s ON s.id=supplier_id', (error, result) => {
+  const queryText = `
+  SELECT product_name, supplier_name 
+  FROM products AS p 
+  INNER JOIN suppliers AS s ON s.id=supplier_id`;
+  database.pool.query(queryText, (error, result) => {
     res.json(result.rows);
   });
 };
