@@ -85,7 +85,7 @@ const postProducts = (req, res) => {
 
   database.pool.query(querySupplier, [newProductSupplierId]).then((result) => {
     if (result.rows.length === 0) {
-      return res.status(400).send('Suppliers doesn´t exists!');
+      return res.status(400).send('Suppliers doesn\'t exists!');
     } else {
       const query = 'INSERT INTO products (product_name, unit_price, supplier_id) VALUES ($1, $2, $3) RETURNING id';
       database.pool
@@ -107,7 +107,7 @@ const postOrder = (req, res) => {
 
   database.pool.query(queryCustomer, [newOrderCustomerId]).then((result) => {
     if (result.rows.length === 0) {
-      return res.status(400).send('Customer doesn´t exists!');
+      return res.status(400).send('Customer doesn\'t exists!');
     } else {
       const query = 'INSERT INTO orders (order_date, order_reference, customer_id) VALUES ($1, $2, $3) RETURNING id';
       database.pool
@@ -140,7 +140,7 @@ const deleteOrders = (req, res) => {
 
   database.pool.query(query, [OrderId]).then((result) => {
     if (result.rows.length === 0) {
-      return res.status(400).send('This order doesn´t exist!');
+      return res.status(400).send('This order doesn\'t exist!');
     } else {
       database.pool
         .query('DELETE FROM orders WHERE id=$1', [OrderId])
