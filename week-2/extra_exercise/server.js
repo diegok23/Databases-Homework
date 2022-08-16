@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const api = require('./api');
+const bodyParser = require('body-parser');
 
 const myLogger = (req, res, next) => {
   const log = {
@@ -12,10 +13,11 @@ const myLogger = (req, res, next) => {
 };
 
 app.use(myLogger);
-
+app.use(bodyParser.json());
 app.get('/customers', api.getCustomers);
 app.get('/restaurants', api.getRestaurants);
-app.get('/nearest/', api.getNearest);
+app.get('/nearest', api.getNearest);
+app.post('/order', api.postOrder);
 
 const PORT = 3000;
 const url = `http://localhost:${PORT}`;
